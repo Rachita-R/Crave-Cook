@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Crave&Cook</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-utensils"></i> Crave&Cook</h1>
+            <p>Your delicious recipe search results</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Recipe Search
+        </a>
+
+        <div class="results-header">
+            <h2><i class="fas fa-search"></i> Search Results</h2>
+            {% if search_term %}
+                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Showing results for: "<strong>{{ search_term }}</strong>"</p>
+            {% endif %}
+            {% if total_results %}
+                <p style="font-size: 1.1rem;">Found <strong>{{ total_results }}</strong> delicious recipe(s)</p>
+            {% endif %}
+        </div>
+
+        {% if recipes %}
+            <div class="recipe-grid">
+                {% for recipe in recipes %}
+                <div class="recipe-card">
+                    <img src="{{ recipe.image }}" alt="{{ recipe.name }}" class="recipe-image">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">{{ recipe.name }}</h3>
+                        <div class="recipe-meta">
+                            <span><i class="fas fa-clock"></i> {{ recipe.cook_time }} min</span>
+                            <span><i class="fas fa-star"></i> {{ recipe.difficulty }}</span>
+                            <span><i class="fas fa-heart"></i> {{ recipe.rating }}/5</span>
+                        </div>
+                        <div class="recipe-tags">
+                            {% for meal in recipe.meal_types %}
+                                <span class="tag">🍽️ {{ meal.title() }}</span>
+                            {% endfor %}
+                            {% for diet in recipe.dietary %}
+                                <span class="tag">🌱 {{ diet.replace('_', ' ').title() }}</span>
+                            {% endfor %}
+                        </div>
+                        <p class="recipe-description">{{ recipe.description }}</p>
+                        
+                        <div style="margin-top: 1.5rem;">
+                            <strong style="color: #667eea; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                                <i class="fas fa-shopping-basket"></i> Ingredients:
+                            </strong>
+                            <ul style="margin-top: 0.5rem; padding-left: 1rem; list-style-type: none;">
+                                {% for ingredient in recipe.ingredients %}
+                                    <li style="margin-bottom: 0.3rem; padding-left: 1.5rem; position: relative;">
+                                        <i class="fas fa-check" style="position: absolute; left: 0; top: 0.2rem; color: #4ade80; font-size: 0.8rem;"></i>
+                                        {{ ingredient.replace('_', ' ').title() }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        {% if recipe.instructions %}
+                        <div class="recipe-instructions">
+                            <h5><i class="fas fa-list-ol"></i> Instructions</h5>
+                            <ol>
+                                {% for instruction in recipe.instructions %}
+                                <li>{{ instruction }}</li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-results">
+                <i class="fas fa-search-minus"></i>
+                <h3>No recipes found</h3>
+                <p>Try adjusting your search criteria or ingredients to discover new delicious recipes!</p>
+                <a href="/" class="search-button" style="display: inline-block; margin-top: 2rem; text-decoration: none; width: auto; padding: 15px 30px;">
+                    <i class="fas fa-arrow-left"></i> Start New Search
+                </a>
+            </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crave&Cook. Delicious recipes at your fingertips! 🍽️✨</p>
+        </div>
+    </footer>
+</body>
+</html>

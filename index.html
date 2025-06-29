@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crave&Cook - Recipe Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-utensils"></i> Crave&Cook</h1>
+            <p>No more "what’s for dinner?" moments.</p>
+            <p>Just click it, pick it and cook it!</p>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <form action="/search" method="POST" class="search-form">
+            <div class="search-section">
+                <div class="search-bar">
+                    <input type="text" name="search_term" placeholder="Search for delicious recipes..." class="search-input">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="filters-section">
+                <h3><i class="fas fa-filter"></i> Filter Your Search</h3>
+                
+                <div class="filter-grid">
+                    <!-- Vegetables & Fruits -->
+                    <div class="filter-group vegetables">
+                        <h4><i class="fas fa-carrot"></i> Vegetables & Fruits</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="tomatoes"> Tomatoes</label>
+                            <label><input type="checkbox" name="ingredients" value="onions"> Onions</label>
+                            <label><input type="checkbox" name="ingredients" value="garlic"> Garlic</label>
+                            <label><input type="checkbox" name="ingredients" value="carrots"> Carrots</label>
+                            <label><input type="checkbox" name="ingredients" value="spinach"> Spinach</label>
+                            <label><input type="checkbox" name="ingredients" value="bell_peppers"> Bell Peppers</label>
+                            <label><input type="checkbox" name="ingredients" value="mushrooms"> Mushrooms</label>
+                            <label><input type="checkbox" name="ingredients" value="avocado"> Avocado</label>
+                            <label><input type="checkbox" name="ingredients" value="lemon"> Lemon</label>
+                            <label><input type="checkbox" name="ingredients" value="broccoli"> Broccoli</label>
+                            <label><input type="checkbox" name="ingredients" value="cauliflower"> Cauliflower</label>
+                            <label><input type="checkbox" name="ingredients" value="zucchini"> Zucchini</label>
+                            <label><input type="checkbox" name="ingredients" value="eggplant"> Eggplant</label>
+                            <label><input type="checkbox" name="ingredients" value="cucumber"> Cucumber</label>
+                            <label><input type="checkbox" name="ingredients" value="lettuce"> Lettuce</label>
+                            <label><input type="checkbox" name="ingredients" value="potatoes"> Potatoes</label>
+                            <label><input type="checkbox" name="ingredients" value="sweet_potatoes"> Sweet Potatoes</label>
+                            <label><input type="checkbox" name="ingredients" value="corn"> Corn</label>
+                            <label><input type="checkbox" name="ingredients" value="peas"> Peas</label>
+                            <label><input type="checkbox" name="ingredients" value="green_beans"> Green Beans</label>
+                            <label><input type="checkbox" name="ingredients" value="apples"> Apples</label>
+                            <label><input type="checkbox" name="ingredients" value="bananas"> Bananas</label>
+                            <label><input type="checkbox" name="ingredients" value="oranges"> Oranges</label>
+                            <label><input type="checkbox" name="ingredients" value="berries"> Berries</label>
+                            <label><input type="checkbox" name="ingredients" value="strawberries"> Strawberries</label>
+                            <label><input type="checkbox" name="ingredients" value="blueberries"> Blueberries</label>
+                            <label><input type="checkbox" name="ingredients" value="mango"> Mango</label>
+                            <label><input type="checkbox" name="ingredients" value="pineapple"> Pineapple</label>
+                        </div>
+                    </div>
+
+                    <!-- Herbs & Spices -->
+                    <div class="filter-group herbs">
+                        <h4><i class="fas fa-seedling"></i> Herbs & Spices</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="basil"> Basil</label>
+                            <label><input type="checkbox" name="ingredients" value="oregano"> Oregano</label>
+                            <label><input type="checkbox" name="ingredients" value="thyme"> Thyme</label>
+                            <label><input type="checkbox" name="ingredients" value="rosemary"> Rosemary</label>
+                            <label><input type="checkbox" name="ingredients" value="parsley"> Parsley</label>
+                            <label><input type="checkbox" name="ingredients" value="cilantro"> Cilantro</label>
+                            <label><input type="checkbox" name="ingredients" value="dill"> Dill</label>
+                            <label><input type="checkbox" name="ingredients" value="mint"> Mint</label>
+                            <label><input type="checkbox" name="ingredients" value="sage"> Sage</label>
+                            <label><input type="checkbox" name="ingredients" value="paprika"> Paprika</label>
+                            <label><input type="checkbox" name="ingredients" value="cumin"> Cumin</label>
+                            <label><input type="checkbox" name="ingredients" value="black_pepper"> Black Pepper</label>
+                            <label><input type="checkbox" name="ingredients" value="ginger"> Ginger</label>
+                            <label><input type="checkbox" name="ingredients" value="turmeric"> Turmeric</label>
+                            <label><input type="checkbox" name="ingredients" value="cinnamon"> Cinnamon</label>
+                            <label><input type="checkbox" name="ingredients" value="nutmeg"> Nutmeg</label>
+                            <label><input type="checkbox" name="ingredients" value="cardamom"> Cardamom</label>
+                            <label><input type="checkbox" name="ingredients" value="chili_powder"> Chili Powder</label>
+                            <label><input type="checkbox" name="ingredients" value="cayenne"> Cayenne</label>
+                            <label><input type="checkbox" name="ingredients" value="bay_leaves"> Bay Leaves</label>
+                        </div>
+                    </div>
+
+                    <!-- Dairy & Eggs -->
+                    <div class="filter-group dairy">
+                        <h4><i class="fas fa-cheese"></i> Dairy & Eggs</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="milk"> Milk</label>
+                            <label><input type="checkbox" name="ingredients" value="eggs"> Eggs</label>
+                            <label><input type="checkbox" name="ingredients" value="butter"> Butter</label>
+                            <label><input type="checkbox" name="ingredients" value="cheese"> Cheese</label>
+                            <label><input type="checkbox" name="ingredients" value="yogurt"> Yogurt</label>
+                            <label><input type="checkbox" name="ingredients" value="cream"> Cream</label>
+                            <label><input type="checkbox" name="ingredients" value="sour_cream"> Sour Cream</label>
+                            <label><input type="checkbox" name="ingredients" value="feta_cheese"> Feta Cheese</label>
+                            <label><input type="checkbox" name="ingredients" value="mozzarella"> Mozzarella</label>
+                            <label><input type="checkbox" name="ingredients" value="cheddar"> Cheddar</label>
+                            <label><input type="checkbox" name="ingredients" value="parmesan"> Parmesan</label>
+                            <label><input type="checkbox" name="ingredients" value="ricotta"> Ricotta</label>
+                            <label><input type="checkbox" name="ingredients" value="cream_cheese"> Cream Cheese</label>
+                            <label><input type="checkbox" name="ingredients" value="cottage_cheese"> Cottage Cheese</label>
+                            <label><input type="checkbox" name="ingredients" value="heavy_cream"> Heavy Cream</label>
+                            <label><input type="checkbox" name="ingredients" value="buttermilk"> Buttermilk</label>
+                        </div>
+                    </div>
+
+                    <!-- Meat & Seafood -->
+                    <div class="filter-group meat">
+                        <h4><i class="fas fa-drumstick-bite"></i> Meat & Seafood</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="chicken"> Chicken</label>
+                            <label><input type="checkbox" name="ingredients" value="chicken_breast"> Chicken Breast</label>
+                            <label><input type="checkbox" name="ingredients" value="chicken_thighs"> Chicken Thighs</label>
+                            <label><input type="checkbox" name="ingredients" value="beef"> Beef</label>
+                            <label><input type="checkbox" name="ingredients" value="ground_beef"> Ground Beef</label>
+                            <label><input type="checkbox" name="ingredients" value="beef_steak"> Beef Steak</label>
+                            <label><input type="checkbox" name="ingredients" value="pork"> Pork</label>
+                            <label><input type="checkbox" name="ingredients" value="pork_chops"> Pork Chops</label>
+                            <label><input type="checkbox" name="ingredients" value="bacon"> Bacon</label>
+                            <label><input type="checkbox" name="ingredients" value="ham"> Ham</label>
+                            <label><input type="checkbox" name="ingredients" value="sausage"> Sausage</label>
+                            <label><input type="checkbox" name="ingredients" value="salmon"> Salmon</label>
+                            <label><input type="checkbox" name="ingredients" value="tuna"> Tuna</label>
+                            <label><input type="checkbox" name="ingredients" value="shrimp"> Shrimp</label>
+                            <label><input type="checkbox" name="ingredients" value="crab"> Crab</label>
+                            <label><input type="checkbox" name="ingredients" value="lobster"> Lobster</label>
+                            <label><input type="checkbox" name="ingredients" value="cod"> Cod</label>
+                            <label><input type="checkbox" name="ingredients" value="tilapia"> Tilapia</label>
+                            <label><input type="checkbox" name="ingredients" value="mussels"> Mussels</label>
+                            <label><input type="checkbox" name="ingredients" value="scallops"> Scallops</label>
+                        </div>
+                    </div>
+
+                    <!-- Grains & Cereals -->
+                    <div class="filter-group grains">
+                        <h4><i class="fas fa-wheat-awn"></i> Grains & Cereals</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="rice"> Rice</label>
+                            <label><input type="checkbox" name="ingredients" value="brown_rice"> Brown Rice</label>
+                            <label><input type="checkbox" name="ingredients" value="jasmine_rice"> Jasmine Rice</label>
+                            <label><input type="checkbox" name="ingredients" value="pasta"> Pasta</label>
+                            <label><input type="checkbox" name="ingredients" value="spaghetti"> Spaghetti</label>
+                            <label><input type="checkbox" name="ingredients" value="penne"> Penne</label>
+                            <label><input type="checkbox" name="ingredients" value="quinoa"> Quinoa</label>
+                            <label><input type="checkbox" name="ingredients" value="bread"> Bread</label>
+                            <label><input type="checkbox" name="ingredients" value="whole_wheat_bread"> Whole Wheat Bread</label>
+                            <label><input type="checkbox" name="ingredients" value="oats"> Oats</label>
+                            <label><input type="checkbox" name="ingredients" value="flour"> Flour</label>
+                            <label><input type="checkbox" name="ingredients" value="whole_wheat_flour"> Whole Wheat Flour</label>
+                            <label><input type="checkbox" name="ingredients" value="barley"> Barley</label>
+                            <label><input type="checkbox" name="ingredients" value="couscous"> Couscous</label>
+                            <label><input type="checkbox" name="ingredients" value="bulgur"> Bulgur</label>
+                            <label><input type="checkbox" name="ingredients" value="tortillas"> Tortillas</label>
+                        </div>
+                    </div>
+
+                    <!-- Baking Essentials -->
+                    <div class="filter-group baking">
+                        <h4><i class="fas fa-birthday-cake"></i> Baking Essentials</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="sugar"> Sugar</label>
+                            <label><input type="checkbox" name="ingredients" value="brown_sugar"> Brown Sugar</label>
+                            <label><input type="checkbox" name="ingredients" value="powdered_sugar"> Powdered Sugar</label>
+                            <label><input type="checkbox" name="ingredients" value="honey"> Honey</label>
+                            <label><input type="checkbox" name="ingredients" value="maple_syrup"> Maple Syrup</label>
+                            <label><input type="checkbox" name="ingredients" value="baking_powder"> Baking Powder</label>
+                            <label><input type="checkbox" name="ingredients" value="baking_soda"> Baking Soda</label>
+                            <label><input type="checkbox" name="ingredients" value="vanilla_extract"> Vanilla Extract</label>
+                            <label><input type="checkbox" name="ingredients" value="almond_extract"> Almond Extract</label>
+                            <label><input type="checkbox" name="ingredients" value="chocolate_chips"> Chocolate Chips</label>
+                            <label><input type="checkbox" name="ingredients" value="cocoa_powder"> Cocoa Powder</label>
+                            <label><input type="checkbox" name="ingredients" value="dark_chocolate"> Dark Chocolate</label>
+                            <label><input type="checkbox" name="ingredients" value="white_chocolate"> White Chocolate</label>
+                            <label><input type="checkbox" name="ingredients" value="yeast"> Yeast</label>
+                            <label><input type="checkbox" name="ingredients" value="cornstarch"> Cornstarch</label>
+                        </div>
+                    </div>
+
+                    <!-- Oils & Fats -->
+                    <div class="filter-group oils">
+                        <h4><i class="fas fa-bottle-droplet"></i> Oils & Fats</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="olive_oil"> Olive Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="extra_virgin_olive_oil"> Extra Virgin Olive Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="vegetable_oil"> Vegetable Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="coconut_oil"> Coconut Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="sesame_oil"> Sesame Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="avocado_oil"> Avocado Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="canola_oil"> Canola Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="sunflower_oil"> Sunflower Oil</label>
+                            <label><input type="checkbox" name="ingredients" value="peanut_oil"> Peanut Oil</label>
+                        </div>
+                    </div>
+
+                    <!-- Condiments -->
+                    <div class="filter-group condiments">
+                        <h4><i class="fas fa-pepper-hot"></i> Condiments</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="soy_sauce"> Soy Sauce</label>
+                            <label><input type="checkbox" name="ingredients" value="vinegar"> Vinegar</label>
+                            <label><input type="checkbox" name="ingredients" value="balsamic_vinegar"> Balsamic Vinegar</label>
+                            <label><input type="checkbox" name="ingredients" value="apple_cider_vinegar"> Apple Cider Vinegar</label>
+                            <label><input type="checkbox" name="ingredients" value="mustard"> Mustard</label>
+                            <label><input type="checkbox" name="ingredients" value="dijon_mustard"> Dijon Mustard</label>
+                            <label><input type="checkbox" name="ingredients" value="ketchup"> Ketchup</label>
+                            <label><input type="checkbox" name="ingredients" value="hot_sauce"> Hot Sauce</label>
+                            <label><input type="checkbox" name="ingredients" value="worcestershire_sauce"> Worcestershire Sauce</label>
+                            <label><input type="checkbox" name="ingredients" value="teriyaki_sauce"> Teriyaki Sauce</label>
+                            <label><input type="checkbox" name="ingredients" value="bbq_sauce"> BBQ Sauce</label>
+                            <label><input type="checkbox" name="ingredients" value="sriracha"> Sriracha</label>
+                            <label><input type="checkbox" name="ingredients" value="mayonnaise"> Mayonnaise</label>
+                            <label><input type="checkbox" name="ingredients" value="ranch_dressing"> Ranch Dressing</label>
+                        </div>
+                    </div>
+
+                    <!-- Beverages -->
+                    <div class="filter-group beverages">
+                        <h4><i class="fas fa-coffee"></i> Beverages</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="ingredients" value="coffee"> Coffee</label>
+                            <label><input type="checkbox" name="ingredients" value="tea"> Tea</label>
+                            <label><input type="checkbox" name="ingredients" value="green_tea"> Green Tea</label>
+                            <label><input type="checkbox" name="ingredients" value="wine"> Wine</label>
+                            <label><input type="checkbox" name="ingredients" value="red_wine"> Red Wine</label>
+                            <label><input type="checkbox" name="ingredients" value="white_wine"> White Wine</label>
+                            <label><input type="checkbox" name="ingredients" value="beer"> Beer</label>
+                            <label><input type="checkbox" name="ingredients" value="coconut_milk"> Coconut Milk</label>
+                            <label><input type="checkbox" name="ingredients" value="almond_milk"> Almond Milk</label>
+                            <label><input type="checkbox" name="ingredients" value="vegetable_broth"> Vegetable Broth</label>
+                            <label><input type="checkbox" name="ingredients" value="chicken_broth"> Chicken Broth</label>
+                            <label><input type="checkbox" name="ingredients" value="beef_broth"> Beef Broth</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meal Type Filter -->
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <h4><i class="fas fa-clock"></i> Meal Type</h4>
+                        <select name="meal_type" class="select-filter">
+                            <option value="">All Meals</option>
+                            <option value="breakfast">🌅 Breakfast</option>
+                            <option value="lunch">🌞 Lunch</option>
+                            <option value="dinner">🌙 Dinner</option>
+                            <option value="dessert">🍰 Dessert</option>
+                            <option value="snack">🥨 Snack</option>
+                            <option value="appetizer">🥗 Appetizer</option>
+                        </select>
+                    </div>
+
+                    <!-- Dietary Filter -->
+                    <div class="filter-group">
+                        <h4><i class="fas fa-leaf"></i> Dietary Preferences</h4>
+                        <select name="dietary" class="select-filter">
+                            <option value="">All Diets</option>
+                            <option value="vegetarian">🥬 Vegetarian</option>
+                            <option value="vegan">🌱 Vegan</option>
+                            <option value="gluten_free">🌾 Gluten Free</option>
+                            <option value="keto">🥑 Keto</option>
+                            <option value="paleo">🍖 Paleo</option>
+                            <option value="dairy_free">🥛 Dairy Free</option>
+                            <option value="low_carb">🥒 Low Carb</option>
+                            <option value="pescatarian">🐟 Pescatarian</option>
+                        </select>
+                    </div>
+
+                    <!-- Cook Time Filter -->
+                    <div class="filter-group">
+                        <h4><i class="fas fa-stopwatch"></i> Cook Time</h4>
+                        <select name="cook_time" class="select-filter">
+                            <option value="">Any Time</option>
+                            <option value="quick">⚡ Quick (Under 15 min)</option>
+                            <option value="medium">🕐 Medium (15-30 min)</option>
+                            <option value="long">⏰ Long (30+ min)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i> Search Delicious Recipes
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crave&Cook. Delicious recipes at your fingertips.</p>
+        </div>
+    </footer>
+</body>
+</html>
